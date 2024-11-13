@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+  <link rel="icon" href="./static/images/favicon.ico"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -202,10 +202,16 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We ...
+Recently, 3D Gaussian Splatting (3DGS) has emerged as the most promising contender to Neural Radiance Fields (NeRF) in 3D scene reconstruction and real-time novel view synthesis. 3DGS outperforms NeRF in training and inference speed, but has substantially higher storage requirements. To remedy this downside, we introduce <span style="color: #cf0202;">PO</span><span style="color: #210075;">TR</span>, a post-training 3DGS codec which uses two novel post-training compression techniques.
           </p>
           <p>
-            We show that .
+First, a modified 3DGS rasterizer is proposed to accurately and efficiently calculate a splat's contribution and the change in PSNR upon its removal. Both metrics are then used to remove between 54% and 84% of splats, depending on the scene, while introducing only minor visual artifacts and without altering any other attributes. Splat removal also significantly boosts inference speeds, with some scenes more than doubling their framerate.
+          </p>
+          <p>
+Second, a novel spherical harmonics energy compaction method is proposed which substantially lowers the AC lighting coefficients' entropy. Using a heavily modified version of ridge regression, up to 95% of AC lighting coefficients are set to zero while simultaneously lowering their L2 norm.
+          </p>
+          <p>
+By combining these two novel compression techniques, <span style="color: #cf0202;">PO</span><span style="color: #210075;">TR</span> is able to achieve compression ratios upto 100x, while minorly affecting visual acuity.
           </p>
         </div>
       </div>
@@ -232,23 +238,29 @@
                 <div id="example1" class="bal-container-small">
 
                   <div class="bal-after">
-                    <img src="./static/images/0.png">
+                    <img src="./static/images/bicycle/ours_DSC8679.png">
                     <div class="bal-afterPosition afterLabel" style="z-index:1;">
                       Ours
                     </div>
                     <div class="bal-afterPosition afterSize">
-                      x MB
+                      11.57 MB
+                    </div>
+                    <div class="bal-afterSplats afterSplats">
+                      1,155,255 splats
                     </div>
                   </div>
 
                   <div class="bal-before" style="width:96.4968152866242%;">
                     <div class="bal-before-inset" style="width: 539px;">
-                      <img src="./static/images/1.png">
+                      <img src="./static/images/bicycle/3dgs_DSC8679.png">
                       <div class="bal-beforePosition beforeLabel">
                         3d-gs [Kerbl 2023]
                       </div>
                       <div class="bal-beforePosition beforeSize">
-                        x MB
+                        1,521 MB
+                      </div>
+                      <div class="bal-beforeSplats beforeSplats">
+                        6,131,954 splats
                       </div>
                     </div>
                   </div>
@@ -264,23 +276,30 @@
                 <div id="example2" class="bal-container-small">
 
                   <div class="bal-after">
-                    <img src="./static/images/0.png">
+                    <img src="./static/images/truck/ours_000001.png">
                     <div class="bal-afterPosition afterLabel">
                       Ours
                     </div>
                     <div class="bal-afterPosition afterSize">
-                      x MB
+                      4.50 MB
+                    </div>
+                    <div class="bal-afterSplats afterSplats">
+                      419,872 splats
                     </div>
                   </div>
 
                   <div class="bal-before" style="width: 50%;">
                     <div class="bal-before-inset" style="width: 539px;">
-                      <img src="./static/images/1.png">
+                      <img src="./static/images/truck/3dgs_000001.png">
                       <div class="bal-beforePosition beforeLabel">
-                        VQDVGO [Li 2022]
+                        <!-- 3DGS [Niedermayr 2023] -->
+                         3d-gs [Kerbl 2023]
                       </div>
                       <div class="bal-beforePosition beforeSize">
-                        x MB
+                        630.2 MB
+                      </div>
+                      <div class="bal-beforeSplats beforeSplats">
+                        2,541,226 splats
                       </div>
                     </div>
                   </div>
@@ -304,25 +323,31 @@
           <div class="columns is-centered">
             <div class="column content">
 
-              <div id="example4" class="bal-container-small">
+              <div id="example3" class="bal-container-small">
                 <div class="bal-after">
-                  <img src="./static/images/0.png">
+                  <img src="./static/images/playroom/ours_DSC05612.png">
                   <div class="bal-afterPosition afterLabel" style="z-index:1;">
                     Ours
                   </div>
                   <div class="bal-afterPosition afterSize">
-                    x MB
+                    1.95 MB
+                  </div>
+                  <div class="bal-afterSplats afterSplats">
+                    179,694 splats
                   </div>
                 </div>
 
                 <div class="bal-before" style="width:62.10191082802548%;">
                   <div class="bal-before-inset" style="width: 539px;">
-                    <img src="./static/images/1.png">
+                    <img src="./static/images/playroom/mesongs_DSC05612.png">
                     <div class="bal-beforePosition beforeLabel">
-                      3d-gs [Kerbl 2023]
+                      MesonGS [Xie 2023]
                     </div>
                     <div class="bal-beforePosition beforeSize">
-                      x MB
+                      29.02 MB
+                    </div>
+                    <div class="bal-beforeSplats beforeSplats">
+                      2,036,892 splats
                     </div>
                   </div>
                 </div>
@@ -334,25 +359,25 @@
 
               </div>
 
-              <div id="example5" class="bal-container-small">
+              <div id="example4" class="bal-container-small">
                 <div class="bal-after">
-                  <img src="./static/images/0.png">
+                  <img src="./static/images/chair/ours_r_168.png">
                   <div class="bal-afterPosition afterLabel" style="z-index:1;">
                     Ours
                   </div>
                   <div class="bal-afterPosition afterSize">
-                    x MB
+                    0.89 MB
+                  </div>
+                  <div class="bal-afterSplats afterSplats">
+                    94,084 splats
                   </div>
                 </div>
 
                 <div class="bal-before" style="width:56.77179962894249%;">
                   <div class="bal-before-inset" style="width: 628px;">
-                    <img src="./static/images/1.png">
+                    <img src="./static/images/chair/gt_r_168.png">
                     <div class="bal-beforePosition beforeLabel">
-                      VQDVGO [Li 2022]
-                    </div>
-                    <div class="bal-beforePosition beforeSize">
-                      x MB
+                      Ground Truth
                     </div>
                   </div>
                 </div>
@@ -379,10 +404,10 @@
     id: '#example2'
   });
   new BeforeAfter({
-    id: '#example4'
+    id: '#example3'
   });
   new BeforeAfter({
-    id: '#example5'
+    id: '#example4'
   });
 
 </script>
